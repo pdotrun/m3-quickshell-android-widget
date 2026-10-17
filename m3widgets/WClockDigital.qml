@@ -22,7 +22,7 @@ WidgetBase {
     radius: Theme.widgetRadius
     color: Theme.m3SurfaceContainer
 
-    // Stacked 2x2 layout (Pixel's large digital clock)
+    // Stacked 2x2 layout
     Column {
       visible: !root.wide
       anchors.left: parent.left
