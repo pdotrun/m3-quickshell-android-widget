@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Effects
 
-// One placed widget: frame, drag, right-click menu and edit-mode chrome.
-// Role names come from Store.model (ListModel) and are injected as required properties.
 Item {
   id: host
 
@@ -68,7 +66,7 @@ Item {
       nx = clampX(Store.snapValue(nx))
       ny = clampY(Store.snapValue(ny))
     }
-    Store.setPos(wid, nx, ny)       // commit first so the release animates to the final spot
+    Store.setPos(wid, nx, ny)  
     dragging = false
   }
 
@@ -79,7 +77,6 @@ Item {
     Store.setSize(wid, list[(i + 1) % list.length].id)
   }
 
-  // ---- widget content ---------------------------------------------------------
   function push() {
     if (!content.item) return
     content.item.cfg = cfgObj
@@ -101,10 +98,6 @@ Item {
     function onDimsChanged() { host.push() }
   }
 
-  // ---- input -------------------------------------------------------------------
-  // Sits behind the content normally (so buttons inside widgets keep working and
-  // right-clicks on them fall through to it). In edit mode it moves in front and
-  // blocks widget interaction, like Android's edit state.
   MouseArea {
     id: area
     anchors.fill: parent
@@ -122,8 +115,6 @@ Item {
     }
   }
 
-  // Dragging uses a handler so it can take over from child MouseAreas (e.g. you
-  // can grab a media widget by pressing on its buttons and moving).
   DragHandler {
     id: dh
     target: null
@@ -151,14 +142,12 @@ Item {
     }
   }
 
-  // Press-and-hold enters edit mode (Android's long-press).
   TapHandler {
     acceptedButtons: Qt.LeftButton
     longPressThreshold: 0.9
     onLongPressed: if (!host.dragging) Store.editMode = true
   }
 
-  // ---- edit-mode chrome --------------------------------------------------------
   Rectangle {
     anchors.fill: parent
     anchors.margins: -4
