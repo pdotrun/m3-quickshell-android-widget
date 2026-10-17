@@ -3,27 +3,19 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
-// Widget layout, persistence and all shared UI state (menus, edit mode, move).
-//
-// Widgets live in a ListModel so delegates are never rebuilt when a single
-// widget moves or is reconfigured. Everything is mirrored to
-// <stateDir>/widgets.json (debounced).
 Singleton {
   id: root
 
-  // ---- grid ---------------------------------------------------------------
   readonly property int cell: 92
   readonly property int gap: 8
   readonly property int margin: 24
   function px(n) { return n * cell - gap }
 
-  // ---- persisted preferences ---------------------------------------------
   property bool snap: true
   property bool locked: false
   onSnapChanged: save()
   onLockedChanged: save()
 
-  // ---- transient UI state ---------------------------------------------------
   property bool editMode: false
   property string selectedId: ""
 
@@ -32,7 +24,6 @@ Singleton {
   property real carryOrigX: 0
   property real carryOrigY: 0
 
-  // Overlay: "", "desktopMenu", "widgetMenu", "add", "config"
   property string overlayKind: ""
   property string overlayScreen: ""
   property real overlayX: 0
@@ -48,7 +39,6 @@ Singleton {
   property bool loaded: false
   property bool loading: false
 
-  // ---- persistence ----------------------------------------------------------
   Process {
     command: ["mkdir", "-p", Quickshell.stateDir]
     running: true
@@ -59,7 +49,7 @@ Singleton {
     id: file
     path: root.dirReady ? Quickshell.statePath("widgets.json") : ""
     onLoaded: root.loadFrom(file.text())
-    onLoadFailed: root.seed()      // first run (file missing) or unreadable
+    onLoadFailed: root.seed() 
   }
 
   Timer { id: saveTimer; interval: 350; onTriggered: root.saveNow() }
@@ -107,7 +97,6 @@ Singleton {
     loaded = true
   }
 
-  // Default home screen, mirroring a fresh Pixel layout.
   function seed() {
     const scr = Quickshell.screens.length > 0 ? Quickshell.screens[0].name : ""
     loading = true
@@ -132,7 +121,6 @@ Singleton {
     seed()
   }
 
-  // ---- model helpers --------------------------------------------------------
   function newId() {
     return "w" + Date.now().toString(36) + Math.floor(Math.random() * 46656).toString(36)
   }
@@ -163,8 +151,6 @@ Singleton {
     return id
   }
 
-  // ---- screens --------------------------------------------------------------
-  // A widget whose screen has been unplugged falls back to the first screen.
   function screenFor(name) {
     const s = Quickshell.screens
     for (let i = 0; i < s.length; i++)
@@ -190,7 +176,6 @@ Singleton {
     }
   }
 
-  // ---- mutations ------------------------------------------------------------
   function add(kind, screenName, x, y) {
     const size = Catalog.defaultSize(kind)
     let px = x, py = y
@@ -251,7 +236,6 @@ Singleton {
     save()
   }
 
-  // ---- "Move" mode (widget follows the pointer until you click) ---------------
   function startCarry(id, screenName) {
     const w = get(id)
     if (!w) return
@@ -294,7 +278,6 @@ Singleton {
     carryId = ""
   }
 
-  // ---- overlay (menus and dialogs) ----------------------------------------------
   function openDesktopMenu(screenName, x, y) {
     selectedId = ""
     overlayScreen = screenName
