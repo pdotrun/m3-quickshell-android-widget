@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Shapes
 
-// Material icon drawn from a 24x24 SVG path, so it needs no icon font and
-// follows the matugen palette through `color`.
 Item {
   id: root
   property string name: ""
