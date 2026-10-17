@@ -1,6 +1,5 @@
 import QtQuick
 
-// "Add widget" picker with live (demo-data) previews of every widget type.
 Item {
   id: root
 
