@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Effects
 
-// Image clipped to a rounded rectangle (Qt Quick has no built-in rounded clip).
 Item {
   id: root
   property alias source: img.source
