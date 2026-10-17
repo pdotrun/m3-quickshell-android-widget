@@ -1,7 +1,5 @@
 import QtQuick
 
-// Per-widget configuration dialog, generated from the Catalog field list.
-// Every change is applied (and saved) immediately, so you see it live.
 Item {
   id: root
 
