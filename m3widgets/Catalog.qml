@@ -2,8 +2,6 @@ pragma Singleton
 import QtQuick
 import Quickshell
 
-// Static description of every widget type: sizes (in grid cells), default
-// configuration and the fields shown in the "Configure" dialog.
 Singleton {
   id: root
 
