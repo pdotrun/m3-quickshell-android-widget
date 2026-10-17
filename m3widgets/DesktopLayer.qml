@@ -2,9 +2,6 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 
-// One full-screen layer-shell surface per monitor, sitting just above the
-// wallpaper layer (Bottom) and below every normal window. It owns the desktop
-// right-click menu and hosts the widgets.
 PanelWindow {
   id: win
 
