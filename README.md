@@ -1,5 +1,5 @@
-# M3 Quickshell Android widget
-## To bring your empty desktop a life.
+<img width="3780" height="1890" alt="MaterialYou3 Quickshell Android Widget" src="https://github.com/user-attachments/assets/57570e03-fc38-4ddc-8a40-adc98057562a" />
+
 ---
 
 > [!NOTE]
