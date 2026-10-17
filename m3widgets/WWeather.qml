@@ -19,7 +19,6 @@ WidgetBase {
     color: Theme.m3SurfaceContainer
   }
 
-  // ---- current conditions (left 176 px; the whole widget at 2x2) ---------
   Item {
     id: now
     width: Math.min(176, root.width)
@@ -90,7 +89,6 @@ WidgetBase {
     }
   }
 
-  // ---- next hours (4x2 only) -----------------------------------------------
   Row {
     visible: root.wide && wx.valid
     anchors.left: now.right
