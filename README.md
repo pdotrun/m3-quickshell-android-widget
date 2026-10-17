@@ -52,6 +52,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://rustup.rs | sh
 source "$HOME/.cargo/env"
 cargo install matugen
 ```
+[Any Linux OS]
+1. Install git and clone this repository OR download .ZIP file [directly](https://github.com/pdotrun/m3-quickshell-android-widget/archive/refs/heads/main.zip)
+2. Unzip it, and move m3widgets over to `~/.config/quickshell/`
 
 ### Setting the widgets up
 1. Create matugen config folder (`mkdir -p ~/.config/matugen`) as well as its template folder (`mkdir -p ~/.config/matugen/templates`)
