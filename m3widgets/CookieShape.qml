@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Shapes
 
-// Scalloped "cookie" shape from Material 3 Expressive, generated as a polyline
 // r(t) = R * (1 - amp/2 * (1 - cos(sides * t))).
 Item {
   id: root
