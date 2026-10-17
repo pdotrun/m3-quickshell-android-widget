@@ -3,21 +3,12 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
-// Material 3 color roles, kept in sync with matugen.
-//
-// matugen renders ~/.cache/m3widgets/colors.json (see matugen/m3widgets.json);
-// this singleton watches that file and animates every role to its new value,
-// so every widget recolors live whenever you run `matugen image <wallpaper>`.
-// The values below are the M3 baseline (dark) and only act as fallbacks.
 Singleton {
   id: root
 
-  // ---- typography & shape --------------------------------------------------
-  // Falls back to the system sans-serif if the family is not installed.
   readonly property string fontFamily: "Google Sans"
   readonly property int widgetRadius: 28
 
-  // ---- color roles ---------------------------------------------------------
   property color m3Primary: "#D0BCFF"
   Behavior on m3Primary { ColorAnimation { duration: 450; easing.type: Easing.OutCubic } }
   property color m3OnPrimary: "#381E72"
@@ -85,7 +76,6 @@ Singleton {
 
   readonly property bool isDark: m3Surface.hslLightness < 0.5
 
-  // ---- matugen sync --------------------------------------------------------
   readonly property string colorsPath: Quickshell.env("HOME") + "/.cache/m3widgets/colors.json"
 
   function camel(key) {
@@ -94,7 +84,7 @@ Singleton {
 
   function apply(text) {
     let obj
-    try { obj = JSON.parse(text) } catch (e) { return }   // file may be mid-write
+    try { obj = JSON.parse(text) } catch (e) { return }   
     for (const key in obj) {
       const name = "m3" + camel(key)
       const val = obj[key]
