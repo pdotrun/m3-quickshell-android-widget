@@ -34,7 +34,6 @@ WidgetBase {
     anchors.leftMargin: root.card ? 24 : 8
     anchors.rightMargin: 8
 
-    // Soft shadow keeps the transparent variant legible over any wallpaper.
     layer.enabled: !root.card
     layer.effect: MultiEffect {
       shadowEnabled: true
