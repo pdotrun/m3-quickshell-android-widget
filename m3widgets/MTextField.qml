@@ -1,6 +1,5 @@
 import QtQuick
 
-// Outlined text field. Emits `committed` (debounced while typing, and on Enter / focus loss).
 Rectangle {
   id: root
   property string text: ""
