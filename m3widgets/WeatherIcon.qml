@@ -1,6 +1,5 @@
 import QtQuick
 
-// Flat, tintable weather glyphs drawn on a 100x100 canvas.
 Canvas {
   id: cv
   property string kind: "clear"     // clear | partly | cloud | rain | snow | storm | fog
