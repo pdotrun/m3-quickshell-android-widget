@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 
-// Material 3 menu. items: [{ label, icon, check, danger, keepOpen, act }, { sep: true }, { header: "Text" }]
+// items: [{ label, icon, check, danger, keepOpen, act }, { sep: true }, { header: "Text" }]
 Item {
   id: root
 
@@ -23,7 +23,6 @@ Item {
   Behavior on opacity { NumberAnimation { duration: 120 } }
   Component.onCompleted: Qt.callLater(function () { root.scale = 1; root.opacity = 1 })
 
-  // swallow clicks on the menu surface itself
   MouseArea { anchors.fill: parent; acceptedButtons: Qt.AllButtons }
 
   Rectangle {
@@ -116,7 +115,6 @@ Item {
             acceptedButtons: Qt.LeftButton
             cursorShape: Qt.PointingHandCursor
             onClicked: {
-              // Grab everything first: closing the overlay rebuilds this model.
               const action = row.modelData.act
               const keep = row.modelData.keepOpen === true
               if (!keep) Store.closeOverlay()
