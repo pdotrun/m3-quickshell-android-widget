@@ -19,7 +19,6 @@ PanelWindow {
     id: stage
     anchors.fill: parent
 
-    // Empty desktop: right-click = menu, left-click = deselect / leave edit mode.
     MouseArea {
       anchors.fill: parent
       acceptedButtons: Qt.LeftButton | Qt.RightButton
@@ -38,8 +37,6 @@ PanelWindow {
       WidgetHost { screenName: win.screenName }
     }
 
-    // "Move" mode: a transparent catcher above everything so the widget keeps
-    // following the pointer even while it is under the cursor.
     MouseArea {
       anchors.fill: parent
       z: 1000
@@ -55,7 +52,6 @@ PanelWindow {
       }
     }
 
-    // Edit-mode hint (Material "snackbar")
     Rectangle {
       visible: Store.editMode || Store.carryId !== ""
       z: 900
