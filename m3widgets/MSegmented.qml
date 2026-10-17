@@ -1,6 +1,6 @@
 import QtQuick
 
-// Single-select segmented button row. options: [{ v: value, l: label }]
+// [{ v: value, l: label }]
 Item {
   id: root
   property var options: []
