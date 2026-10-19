@@ -11,6 +11,7 @@
 1. Quickshell (> v0.3)
 2. Matugen (> v4.x)
 3. libnotify (> v0.8)
+4. (since version v0.2) awww/swww wallpaper manager 
 
 #### Optional (to create the Android immersion)
 1. [Google Sans](https://fonts.google.com/specimen/Google+Sans)
@@ -111,3 +112,11 @@ output_path = '~/.cache/m3widgets/colors.json'
 <img width="1366" height="717" alt="image" src="https://github.com/user-attachments/assets/fb6721a5-7af8-49db-9aa4-9b70185ddbff" />
 <img width="849" height="660" alt="image" src="https://github.com/user-attachments/assets/3905d8b2-c626-4ebb-99c8-f0f45f40461d" />
 <img width="1314" height="768" alt="image" src="https://github.com/user-attachments/assets/aceb90ff-2b8d-4e8d-87d8-1fde325cdfb3" />
+
+## After v0.2 update:
+<img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/5b98d0b0-5e53-47bb-8339-330d0081001b" />
+<img width="307" height="345" alt="image" src="https://github.com/user-attachments/assets/2910a83d-37f1-4369-88fd-1114c83197d8" />
+<img width="1366" height="529" alt="image" src="https://github.com/user-attachments/assets/130bac39-7aa3-455b-8f43-cb3866af1152" />
+<img width="1366" height="541" alt="image" src="https://github.com/user-attachments/assets/19ba64ca-2f62-457b-bd28-c69a801dcac9" />
+<img width="1366" height="717" alt="image" src="https://github.com/user-attachments/assets/b31a9d6b-52dd-452c-b5bc-555bb8981e41" />
+
